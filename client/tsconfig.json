@@ -33,7 +33,9 @@
       "@api/*": ["pages/api/*"],
       "@libs/*": ["libs/*"],
       "@utils/*": ["utils/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@images/*": ["../../public/images/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // 컴파일 포함

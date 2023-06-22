@@ -43,6 +43,7 @@ const style = css`
 
   body {
     line-height: 1;
+    background-color: #3C3C3C;
   }
 
   ol, ul {
