@@ -1,5 +1,5 @@
 import {Routes} from "nest-router";
-import { OauthModule } from "@src/modules/oauth/oauth.module";
+import { OauthModule } from "@modules/oauth/oauth.module";
 
 export const ROUTES: Routes = [
   {

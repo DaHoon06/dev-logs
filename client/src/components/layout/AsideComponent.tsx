@@ -1,27 +1,16 @@
 import {ReactElement} from "react";
 import {css} from "@emotion/react";
-import { Icon } from "@components/common/icons/Icon";
+import { GithubSignInButton } from "@components/sign-in/github";
 
 export const AsideComponent = (): ReactElement => {
-
-  const githubLogin = async () => {
-    try {
-      const options = 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no';
-      window.open(`https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}`, 'github-authorization', options)
-    } catch (e) {
-      console.log(e);
-    }
-  }
   return (
     <aside css={asideStyle.layout}>
-      <button onClick={githubLogin}>
-        TEST
-      </button>
+
       <div css={asideStyle.topContainer}>
-        <Icon type={'github'} alt={'github'} width={36} height={36} />
+        <GithubSignInButton />
       </div>
       <div css={asideStyle.bottomContainer}>
-        <ul>
+        <ul css={asideStyle.menuList}>
           <li>1</li>
           <li>2</li>
           <li>3</li>
@@ -52,5 +41,12 @@ const asideStyle = {
   bottomContainer: css({
     width: '100%',
     height: '100%',
+  }),
+  menuList: css({
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   })
 }

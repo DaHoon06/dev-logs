@@ -10,10 +10,13 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@src/*": ["src/*"],
-      "@config/*": ["src/config/*"],
+      "@src/*": ["*"],
+      "@modules/*": ["modules/*"],
+      "@config/*": ["config/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@middleware/*": ["middleware/*"]
     },
     "incremental": true,
     "skipLibCheck": true,

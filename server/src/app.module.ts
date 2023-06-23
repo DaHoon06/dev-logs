@@ -1,20 +1,19 @@
 import {Logger, MiddlewareConsumer, Module, NestModule} from '@nestjs/common';
 import {ConfigModule, ConfigService} from '@nestjs/config';
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {LoggerMiddleware} from "@src/middleware/logger.middleware";
+import {LoggerMiddleware} from "@middleware/logger.middleware";
 import {ThrottlerGuard, ThrottlerModule} from "@nestjs/throttler";
 import {APP_GUARD} from "@nestjs/core";
 import {ROUTES} from "@src/routes";
 import {RouterModule} from "nest-router";
 import {AppController} from "@src/app.controller";
-import { OauthModule } from "@src/modules/oauth/oauth.module";
+import { OauthModule } from "@modules/oauth/oauth.module";
 
 const isProduct = process.env.NODE_ENV === 'product';
 
 @Module({
   imports: [
     OauthModule,
-
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env'

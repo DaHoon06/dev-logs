@@ -3,7 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 export function setupSwagger(app: INestApplication): void {
   const options = new DocumentBuilder()
-    .setTitle('zizi world')
+    .setTitle('development logs')
     .setDescription('API 문서')
     .setVersion('1.0.0')
     .build();

@@ -6,7 +6,7 @@ import {
   NotFoundException
 } from "@utils/errorHandler";
 
-const baseURL = '/api';
+const baseURL = 'http://localhost:8080/api';
 const instance: AxiosInstance = axios.create({
   baseURL,
   headers: {

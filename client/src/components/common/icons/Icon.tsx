@@ -2,8 +2,6 @@ import Image from "next/image";
 import { ComponentProps } from "react";
 import classNames from "classnames";
 
-import github from '/public/images/github.svg';
-
 type IconType = 'github'
 
 interface Props extends ComponentProps<'span'>{
@@ -14,10 +12,10 @@ interface Props extends ComponentProps<'span'>{
 }
 
 const iconSwitch = (props: Props) => {
-  const {type, alt, width = 44, height = 44} = props;
+  const {type, alt, width = 44, height = 44, className} = props;
   switch (type) {
     case 'github':
-      return (<Image layout="intrinsic" src={'/images/github.svg'} alt={alt} width={width} height={height} />);
+      return (<Image priority={true} src={'/images/github.svg'} alt={alt} width={width} height={height} />);
     default:
       break;
   }

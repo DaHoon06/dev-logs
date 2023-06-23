@@ -22,7 +22,7 @@ export const winstonConfig = WinstonModule.createLogger({
       level: product ? 'http' : 'silly',
       format: product ? winston.format.simple() : winston.format.combine(
         winston.format.timestamp(),
-        utilities.format.nestLike('zizilog', {
+        utilities.format.nestLike('dev-logs', {
           colors: true,
           prettyPrint: true
         }),
