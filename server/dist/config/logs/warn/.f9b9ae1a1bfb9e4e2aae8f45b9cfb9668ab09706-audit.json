@@ -1,0 +1,160 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\.f9b9ae1a1bfb9e4e2aae8f45b9cfb9668ab09706-audit.json",
+    "files": [
+        {
+            "date": 1687422223166,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-23-43.warn.log",
+            "hash": "abbb0246e15641a350d1a85bd3f9ac6f7711b66d9c75e49fa33c75d2340603da"
+        },
+        {
+            "date": 1687422235951,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-23-55.warn.log",
+            "hash": "7a1acf653e8087149ea3b58dafc2ab0d58166422b6b5adf8a6337a66456f6d1e"
+        },
+        {
+            "date": 1687422240461,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-24-00.warn.log",
+            "hash": "dd443b143b8675b8a033eb56ddcc1e91cd219ed3fbfba6e5071461e8bcbcb860"
+        },
+        {
+            "date": 1687422253889,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-24-13.warn.log",
+            "hash": "0c2e0cb6b7246dadb9ae5120b2cdd9bd6f5e1a2f27defe7a371d710c9fb358b9"
+        },
+        {
+            "date": 1687422257635,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-24-17.warn.log",
+            "hash": "aa92d312a70244079494c1b73e17be70406a91226566220dadd04868cc43bcbe"
+        },
+        {
+            "date": 1687422276899,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-24-36.warn.log",
+            "hash": "26702f34c625a513de2766eebffba91ab6c080fa55c8dfe7002e6c01ab6eeaf9"
+        },
+        {
+            "date": 1687422292005,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-24-52.warn.log",
+            "hash": "a8d1842abd402e3cd7cffa7d57d35d9c241547f20ca54d49d5411eb35ece662a"
+        },
+        {
+            "date": 1687422307150,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-25-07.warn.log",
+            "hash": "587b2b6af4f07d890eeb823272bc4d92e0bb863e4d32a2e33ddd5116cb95fc07"
+        },
+        {
+            "date": 1687422308151,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-25-08.warn.log",
+            "hash": "c885214c840f2532807c5131160e4aa46f6bbc6e91603b36afaf3cc6fd478ea1"
+        },
+        {
+            "date": 1687422336091,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-25-36.warn.log",
+            "hash": "8cc89461f35cbb7433336cd243247b335fdf5804484afb34bd370a9e18a8c729"
+        },
+        {
+            "date": 1687422433506,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-27-13.warn.log",
+            "hash": "4236329295ad720cbdea6bd5aaba95fe8f7cb8745eca5b250ab767faf9b01581"
+        },
+        {
+            "date": 1687422435182,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-27-15.warn.log",
+            "hash": "3da19113ecdc27c4a32ef9a4b76ce0f2b0eb26c12d090c1b6293cbc51908e9c4"
+        },
+        {
+            "date": 1687422593738,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-22 17-29-53.warn.log",
+            "hash": "aef03ee484603b58ffe18abfa653570e34e995c36fc1566111b1da4753e29c9f"
+        },
+        {
+            "date": 1687480027155,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 09-27-07.warn.log",
+            "hash": "c08b8ac4cbb3cf986655859758e34af7aa9343028e1b3abfeff0540879f7e9e0"
+        },
+        {
+            "date": 1687480070542,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 09-27-50.warn.log",
+            "hash": "fe21a1d0bdde972311fd4dd3154b6023dd7e6ff6c608490effc5c4c852b6ff19"
+        },
+        {
+            "date": 1687480092101,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 09-28-12.warn.log",
+            "hash": "b0403ab5308825fb1548857587e1820dbc68c8457b7d34f060ed22892878713c"
+        },
+        {
+            "date": 1687480363187,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 09-32-43.warn.log",
+            "hash": "16101b1c2a9470228d4350d8887abc5eb4b773afd42fedd4a42e063c5568074e"
+        },
+        {
+            "date": 1687482174893,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 10-02-54.warn.log",
+            "hash": "63a7555b62afce8d1ebbd06b2ca79e028422ec2a406d5535ddf6fc3a1b272cb7"
+        },
+        {
+            "date": 1687482258575,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 10-04-18.warn.log",
+            "hash": "5700807997108e40de61b126ca193d9f3bc3d38252f6216d95ac24b559c585cd"
+        },
+        {
+            "date": 1687487819395,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-36-59.warn.log",
+            "hash": "e5de5062f1615f6dfd2d7b26b099185a692c94440063b0c9aaddc1964565d3f3"
+        },
+        {
+            "date": 1687487977363,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-39-37.warn.log",
+            "hash": "727cab6043135524795fc930d33c42ee0d7c9082f2f69d33cfff4baa92df196e"
+        },
+        {
+            "date": 1687488185263,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-43-05.warn.log",
+            "hash": "44b7ea5d3e34b161d5f90747731243e4ee0f7b53bdc27c8d86379f5d1d7301b9"
+        },
+        {
+            "date": 1687488187678,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-43-07.warn.log",
+            "hash": "15d936ac3ed6e92048bf2e4498fe551350ca7e165976b78be841facbd499b655"
+        },
+        {
+            "date": 1687488388863,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-46-28.warn.log",
+            "hash": "cc3e2a784dfc3e92ecf3d23636627b9e023b89351d1f0b07d3cb9584b65635c9"
+        },
+        {
+            "date": 1687488684346,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-51-24.warn.log",
+            "hash": "c68847690d55269a4ba5be8761a64bce09b1eb8db4a36f184be73bc81986fbbc"
+        },
+        {
+            "date": 1687488777247,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 11-52-57.warn.log",
+            "hash": "fe6cbeb62ec6e1ed7f024a036001375bb2876c4c4d6686c8bd6ef9456e841fbf"
+        },
+        {
+            "date": 1687493278221,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 13-07-58.warn.log",
+            "hash": "5d3e2dc92f6e012da9c4b04f4bdb58efaca21cf5f830636e523e404d4ee94311"
+        },
+        {
+            "date": 1687493280176,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 13-08-00.warn.log",
+            "hash": "39702d0da20cbaafdf8b560726b152807c46284dfeac60fba3f204bcda42ea55"
+        },
+        {
+            "date": 1687494577657,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 13-29-37.warn.log",
+            "hash": "34f92bd013b346b31f8142f877ae9d783f0ae1e2ac2438b601bdc4acf210f4bb"
+        },
+        {
+            "date": 1687494789653,
+            "name": "D:\\local_reposiory\\dev-logs\\server\\dist\\config\\logs\\warn\\2023-06-23 13-33-09.warn.log",
+            "hash": "6aa23406b4ba08ead1837b1231613461fe32aa23e013872ad993e8b1e8fa7b08"
+        }
+    ],
+    "hashType": "sha256"
+}
