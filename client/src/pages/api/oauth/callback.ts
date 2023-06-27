@@ -7,6 +7,6 @@ export default async function callbackHandler(
   const { query } = req;
   if (query) {
     const {code} = query as { code: string };
-    return res.redirect(`/test?code=${code}`)
+    return res.redirect(`/dashboard?code=${code}`)
   }
 }

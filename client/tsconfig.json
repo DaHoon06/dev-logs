@@ -31,9 +31,12 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@api/*": ["pages/api/*"],
+      "@apis/*": ["apis/*"],
+      "@constants/*": ["constants/*"],
       "@libs/*": ["libs/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@images/*": ["../../public/images/*"],
       "@assets/*": ["assets/*"]
     }
