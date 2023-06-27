@@ -41,6 +41,6 @@
       "@assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // 컴파일 포함
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/**/*.ts"], // 컴파일 포함
   "exclude": ["node_modules"] // 컴파일 제외
 }
