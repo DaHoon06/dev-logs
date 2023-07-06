@@ -9,7 +9,7 @@ interface Props {
 
 const styles: { [key: string]: CSSProperties } = {
   baseLayout: {
-    height: '44px',
+    height: '80px',
   },
 };
 
@@ -27,10 +27,8 @@ export default LayoutComponent;
 
 const layoutStyle = {
   container: css({
-    marginLeft: '66px',
     marginTop: styles['baseLayout'].height,
-    width: 'calc(100% - 66px)',
+    width: '100%',
     height: '100%',
-    backgroundColor: '#3C3C3C',
   }),
 };

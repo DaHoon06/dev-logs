@@ -1,15 +1,30 @@
-import { NextPage } from 'next';
-import { useSession } from 'next-auth/react';
 import { DahoonIntroduce } from '@components/profile/DahoonIntroduce';
+import withGetServerSideProps from '@utils/withGetServerSideProps';
+import { GetServerSideProps, NextPage } from 'next';
+import { ReactElement } from 'react';
 
-const Home: NextPage = () => {
-  const { data: session } = useSession();
+const Home: NextPage = (): ReactElement => {
 
   return (
-    <div>
+    <div test-id="test">
       <DahoonIntroduce />
     </div>
   );
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = withGetServerSideProps(
+  async (ctx) => {
+    const { status = 200 } = ctx.req?.query
+    const response = await fetch(`/api/hello?status=${status}`)
+
+    const result = await response.json()
+
+    return {
+      props: {
+        result,
+      },
+    }
+  },
+)

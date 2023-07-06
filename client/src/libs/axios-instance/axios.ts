@@ -1,4 +1,4 @@
-import axios, {AxiosInstance, AxiosResponse} from 'axios';
+import axios, {AxiosInstance, AxiosResponse, AxiosRequestConfig} from 'axios';
 import {
   AuthorizationException,
   ForbiddenException,
@@ -15,6 +15,10 @@ const instance: AxiosInstance = axios.create({
   timeout: 20000,
 });
 
+export interface RequestConfig extends AxiosRequestConfig {
+  suppressStatusCode?: number[]
+}
+
 function AxiosAuthInterceptor<T>(response: AxiosResponse<T>): AxiosResponse {
   const status = response.status;
   if (status === 401) throw new AuthorizationException();
@@ -25,6 +29,12 @@ function AxiosAuthInterceptor<T>(response: AxiosResponse<T>): AxiosResponse {
 }
 
 instance.interceptors.request.use((config) => {
+  const token = window.sessionStorage.getItem('accessToken') ?? '';
+  if (token) {
+    config.headers!.Authorization = `Bearer ${token}`;
+    return config;
+  }
+
   return config;
 });
 

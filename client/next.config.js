@@ -14,6 +14,13 @@ module.exports = {
         pathname: '/badge/**',
       },
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    path: '/_next/image',
+    loader: 'default',
+    disableStaticImages: false,
+    minimumCacheTTL: 60,
+    formats: ['image/webp'],
   },
   reactStrictMode: true,
   typescript: {},
@@ -30,7 +37,13 @@ module.exports = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
-    prependData: `@import "./common/_variables.scss";`,
+    prependData: `
+      @import "./common/_variables.scss";
+      @import "./common/mixins/_flexbox.scss";
+      @import "./common/mixins/_position.scss";
+      @import "./common/mixins/_reponsive.scss";
+      @import "./common/mixins/_visual.scss";
+      `,
   },
   moduleNameMapper: {
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',

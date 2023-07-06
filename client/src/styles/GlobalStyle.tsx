@@ -126,7 +126,6 @@ const style = css`
 
   body {
     line-height: 1;
-    background-color: #3c3c3c;
   }
 
   ol,

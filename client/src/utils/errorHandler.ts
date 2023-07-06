@@ -1,4 +1,7 @@
-import { ApiError } from 'next/dist/server/api-utils';
+export class ApiError extends Error {
+  redirectUrl: string = ''
+  notFound: boolean = false
+}
 
 export function isInstanceOfApiError(object: unknown): object is ApiError {
   return object instanceof ApiError && ('redirectUrl' in object || 'notFound' in object);
