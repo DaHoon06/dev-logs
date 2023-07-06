@@ -2,6 +2,19 @@
 const path = require('path');
 
 module.exports = {
+  images: {
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['img.shields.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.shields.io',
+        port: '',
+        pathname: '/badge/**',
+      },
+    ],
+  },
   reactStrictMode: true,
   typescript: {},
   serverRuntimeConfig: {
