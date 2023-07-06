@@ -1,0 +1,108 @@
+//font-family: , sans-serif;
+
+$nanumGothicCoding: 'Nanum Gothic';
+$Noto: 'Noto Serif KR';
+
+@mixin defaultFont() {
+  //white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: $nanumGothicCoding, serif;
+  font-weight: 300;
+}
+
+.title {
+  @include defaultFont();
+  font-size: min(5vw, 55px);
+}
+
+.h1 {
+  @include defaultFont();
+  font-size: min(4vw, 18px);
+  font-weight: 600;
+}
+.h2 {
+  @include defaultFont();
+  font-size: min(4vw, 16px);
+  font-weight: 500;
+}
+.h3 {
+  @include defaultFont();
+  font-size: min(4vw, 14px);
+  font-weight: 400;
+}
+.body1 {
+  @include defaultFont();
+  font-size: min(4vw, 14px);
+}
+.body2 {
+  @include defaultFont();
+  font-size: min(4vw, 13px);
+}
+.sub1 {
+  @include defaultFont();
+  font-size: min(4vw, 14px);
+}
+.sub2 {
+  @include defaultFont();
+  font-size: min(4vw, 12px);
+}
+
+/* FONT COLOR */
+
+.black {
+  color: $black;
+}
+.black100 {
+  color: $black100;
+}
+
+.white {
+  color: $font-white;
+}
+
+.line {
+  color: $line;
+}
+
+.placeholder {
+  color: $placeholder;
+}
+
+.textSub {
+  color: #7c7c7c;
+}
+
+.skyblue {
+  color: #4ebeff;
+}
+.red {
+  color: red;
+}
+
+.gray {
+  color: $text-gray;
+}
+
+.light-gray {
+  color: $light-gray;
+}
+
+.yellow {
+  color: #ffb757;
+}
+
+/* FONT WEIGHT */
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: bold;
+}

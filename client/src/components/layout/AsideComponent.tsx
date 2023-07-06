@@ -1,14 +1,11 @@
-import {ReactElement} from "react";
-import {css} from "@emotion/react";
-import { GithubSignInButton } from "@components/sign-in/github";
+import { ReactElement } from 'react';
+import { css } from '@emotion/react';
+import { GithubSignInButton } from '@components/sign-in/github';
 
 export const AsideComponent = (): ReactElement => {
   return (
     <aside css={asideStyle.layout}>
-
-      <div css={asideStyle.topContainer}>
-        <GithubSignInButton />
-      </div>
+      <div css={asideStyle.topContainer}></div>
       <div css={asideStyle.bottomContainer}>
         <ul css={asideStyle.menuList}>
           <li>1</li>
@@ -17,8 +14,8 @@ export const AsideComponent = (): ReactElement => {
         </ul>
       </div>
     </aside>
-  )
-}
+  );
+};
 
 const asideStyle = {
   layout: css({
@@ -27,11 +24,11 @@ const asideStyle = {
     left: '0',
     width: '66px',
     height: '100%',
-    backgroundColor: "rgba(23,23,23,0.37)",
+    backgroundColor: 'rgba(23,23,23,0.37)',
     border: '1px solid #383838',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   }),
   topContainer: css({
     height: '60px',
@@ -47,6 +44,6 @@ const asideStyle = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
-  })
-}
+    justifyContent: 'center',
+  }),
+};

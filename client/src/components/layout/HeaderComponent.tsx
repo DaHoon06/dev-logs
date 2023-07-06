@@ -1,5 +1,6 @@
-import {CSSProperties, ReactElement} from "react";
-import { css } from '@emotion/react'
+import { CSSProperties, ReactElement } from 'react';
+import { css } from '@emotion/react';
+import { GithubSignInButton } from '@components/sign-in/github';
 
 interface Props {
   styles: { [key: string]: CSSProperties };
@@ -20,35 +21,36 @@ export const HeaderComponent = (props: Props): ReactElement => {
             <span css={headerStyle.button3} />
           </li>
         </ul>
+        <GithubSignInButton />
       </div>
     </header>
-  )
-}
+  );
+};
 
 const headerStyle = {
   layout: css({
-    position: "fixed",
+    position: 'fixed',
     top: '0',
     left: '0',
-    backgroundColor: "rgba(23,23,23,0.37)",
+    backgroundColor: 'rgba(23,23,23,0.37)',
     border: '1px solid #383838',
     width: '100%',
-    height: '44px',
+    height: '80px',
   }),
   container: css({
     width: '100%',
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    padding: '0 10px'
+    padding: '0 10px',
   }),
   list: css({
     width: '100%',
     display: 'flex',
 
     li: css({
-      marginRight: '4px'
-    })
+      marginRight: '4px',
+    }),
   }),
   button1: css({
     display: 'inline-block',
