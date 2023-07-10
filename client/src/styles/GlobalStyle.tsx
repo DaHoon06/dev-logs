@@ -138,19 +138,6 @@ const style = css`
     quotes: none;
   }
 
-  pre {
-    width: 100%;
-    white-space: pre-wrap;
-    word-break: break-all;
-    overflow: auto;
-    background: #323232;
-    color: #d7d7d7;
-    font-weight: 400;
-    display: inline-block;
-    padding: 1em;
-    border-radius: 6px;
-  }
-
   a {
     display: inline-block;
     text-decoration: none;

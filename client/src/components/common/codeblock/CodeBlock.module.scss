@@ -1,5 +1,15 @@
 .code_block {
   margin: 0.5em 0;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow: auto;
+  background: #323232;
+  color: #d7d7d7;
+  font-weight: 400;
+  display: inline-block;
+  padding: 1em;
+  border-radius: 6px;
   .code_label {
     color: #737070;
     padding-bottom: 1em;
