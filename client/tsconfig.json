@@ -4,7 +4,6 @@
     "lib": ["dom", "dom.iterable", "esnext"], // 컴파일 과정에 사용될 라이브러리 파일 설정
     "module": "ESNext", // 생성될 모듈 코드 설정: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'
     "allowJs": true, //JavaScript 파일 컴파일 허용
-    "jsx": "preserve",
     "skipLibCheck": true, //js 파일 오류 리포트 설정
     "incremental": true, // 증분 컴파일 활성화
     "forceConsistentCasingInFileNames": true,
@@ -13,10 +12,10 @@
     "moduleResolution": "node", // 모듈 분석 방법 설정: 'node' (Node.js) 또는 'classic' (TypeScript pre-1.6).
     "resolveJsonModule": true, // json 파일 파서
     "isolatedModules": true, // 각 파일을 별도 모듈로 변환 ('ts.transpileModule'과 유사)
-    "types": [], // 컴파일 시 포함될 유형 선언 파일 입력
+    "types": ["node"], // 컴파일 시 포함될 유형 선언 파일 입력
     "jsxImportSource": "@emotion/react", // emotion 사용
     /* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
-
+    "jsx": "preserve",
     /* 컨벤션 옵션 ------------------------------------------------------------------------------------------------------------------------------------------- */
     "noImplicitAny": true, //명시적이지 않은 'any' 유형으로 표현식 및 선언 사용 시 오류 발생 unknown 쓰십쇼
     "noUnusedLocals": false, //쓰지않는 지역변수 있으면 에러내기
@@ -41,6 +40,6 @@
       "@assets/*": ["assets/*"],
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/**/*.ts"], // 컴파일 포함
+  "include": ["next-env.d.ts", "src", "**/*.ts", "**/*.tsx", "types/**/*.ts"], // 컴파일 포함
   "exclude": ["node_modules"] // 컴파일 제외
 }

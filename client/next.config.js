@@ -39,9 +39,10 @@ module.exports = {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: `
       @import "./common/_variables.scss";
+      @import "./common/_color.scss";
       @import "./common/mixins/_flexbox.scss";
       @import "./common/mixins/_position.scss";
-      @import "./common/mixins/_reponsive.scss";
+      @import "./common/mixins/_responsive.scss";
       @import "./common/mixins/_visual.scss";
       `,
   },

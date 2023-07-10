@@ -1,0 +1,46 @@
+@mixin buttonDefaultOptions() {
+  width: 10em;
+  height: 3em;
+  padding: 0.40625rem 0;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.primary {
+  @include buttonDefaultOptions();
+  background-color: $primary;
+  color: $white;
+  transition: all .3s ease;
+
+  &:hover {
+    filter: brightness(95%);
+  }
+}
+
+.gray {
+  @include buttonDefaultOptions();
+  transition: all .3s ease;
+  color: #2d2d2d;
+  background-color: #f4f4f4;
+
+  &:hover {
+    background: #e2e2e2;
+  }
+
+  &-active {
+    background: #eafaf9;
+    color: $primary;
+  }
+}
+
+.icon {
+  @include buttonDefaultOptions();
+  width: fit-content;
+  height: auto;
+  box-shadow: inherit;
+  padding: 0;
+
+  &:hover {
+    filter: brightness(95%);
+  }
+}

@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { Typography } from '@components/common/Typography/Typography';
+import { Typography } from '@components/common/typography/Typography';
 import { StackBadge } from '@components/ui/badge/StackBadge';
 
 export const DahoonIntroduce = (): ReactElement => {

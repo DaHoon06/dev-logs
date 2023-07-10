@@ -1,0 +1,66 @@
+@import "Typography.mixin";
+
+.h1 {
+  @include h1;
+}
+
+.h2 {
+  @include h2;
+}
+
+.h3 {
+  @include h3;
+}
+
+.h4 {
+  @include h4;
+}
+
+.h5 {
+  @include h5;
+}
+
+.body1 {
+  @include body1;
+}
+
+.body2 {
+  @include body2;
+}
+
+.caption {
+  @include caption;
+}
+
+.regular {
+  @include regular;
+}
+
+.medium {
+  @include medium;
+}
+
+.semibold {
+  @include semibold;
+}
+
+.bold {
+  @include bold;
+}
+
+.primary {
+  color: $primary;
+}
+
+.black {
+  color: $black;
+}
+
+.gray {
+  color: $gray;
+}
+
+.white {
+  color: $white;
+}
+

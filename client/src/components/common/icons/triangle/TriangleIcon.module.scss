@@ -1,0 +1,9 @@
+.transform_active {
+  transition: all ease 0.5s;
+  transform: rotate(180deg);
+}
+
+.transform_unactive {
+  transition: all ease 0.5s;
+  transform: rotate(0);
+}
