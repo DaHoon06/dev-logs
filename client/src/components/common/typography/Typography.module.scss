@@ -32,16 +32,20 @@
   @include caption;
 }
 
+.thin {
+  @include thin;
+}
+
+.light {
+  @include light;
+}
+
 .regular {
   @include regular;
 }
 
 .medium {
   @include medium;
-}
-
-.semibold {
-  @include semibold;
 }
 
 .bold {

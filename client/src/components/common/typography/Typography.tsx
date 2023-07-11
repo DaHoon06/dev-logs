@@ -9,7 +9,7 @@ interface Typography extends ComponentProps<'p'> {
 }
 
 export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body1' | 'body2' | 'caption';
-export type FontWeight = 'regular' | 'medium' | 'semibold' | 'bold';
+export type FontWeight = 'thin' | 'light' | 'regular' | 'medium' | 'bold';
 export type FontColor = 'black' | 'gray' | 'primary' | 'white';
 
 export const Typography = (props: Typography): ReactElement => {
