@@ -1,12 +1,12 @@
-import axios, {AxiosInstance, AxiosResponse, AxiosRequestConfig} from 'axios';
+import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
 import {
   AuthorizationException,
   ForbiddenException,
   NotAllowedMethodException,
-  NotFoundException
-} from "@utils/errorHandler";
+  NotFoundException,
+} from '@utils/error/errorHandler';
 
-const baseURL = 'http://localhost:8080/api';
+const baseURL = 'http://localhost:3000/api';
 const instance: AxiosInstance = axios.create({
   baseURL,
   headers: {
@@ -16,7 +16,7 @@ const instance: AxiosInstance = axios.create({
 });
 
 export interface RequestConfig extends AxiosRequestConfig {
-  suppressStatusCode?: number[]
+  suppressStatusCode?: number[];
 }
 
 function AxiosAuthInterceptor<T>(response: AxiosResponse<T>): AxiosResponse {
@@ -29,12 +29,11 @@ function AxiosAuthInterceptor<T>(response: AxiosResponse<T>): AxiosResponse {
 }
 
 instance.interceptors.request.use((config) => {
-  const token = window.sessionStorage.getItem('accessToken') ?? '';
-  if (token) {
-    config.headers!.Authorization = `Bearer ${token}`;
-    return config;
-  }
-
+  // const token = window.sessionStorage.getItem('accessToken') ?? '';
+  // if (token) {
+  //   config.headers!.Authorization = `Bearer ${token}`;
+  //   return config;
+  // }
   return config;
 });
 
