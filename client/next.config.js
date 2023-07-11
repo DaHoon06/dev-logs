@@ -5,13 +5,19 @@ module.exports = {
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['img.shields.io'],
+    domains: ['img.shields.io', 'picsum.photos'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'img.shields.io',
         port: '',
         pathname: '/badge/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/400/**',
       },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

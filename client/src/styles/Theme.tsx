@@ -10,11 +10,15 @@ const theme: Theme = {
     lg: '24px',
   },
   colors: {
-    black: '#000',
-    dark: '#191a20',
-    primary: '#3f4150',
-    secondary: '#8c8d96',
+    white: '#fff',
+    black: '#323232',
+    gray: '#737373',
+    line: '#ededed',
+    primary: '#00c7ae',
   },
-}
+};
+
+export type Colors<C> = C;
+export type FontSize<F> = F;
 
 export default theme;
