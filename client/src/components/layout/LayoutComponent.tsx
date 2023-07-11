@@ -1,6 +1,5 @@
 import { CSSProperties, ReactElement, ReactNode } from 'react';
-import { HeaderComponent } from '@components/layout/HeaderComponent';
-import { AsideComponent } from '@components/layout/AsideComponent';
+import { Header } from '@components/layout/Header';
 import { css } from '@emotion/react';
 
 interface Props {
@@ -9,17 +8,17 @@ interface Props {
 
 const styles: { [key: string]: CSSProperties } = {
   baseLayout: {
-    height: '80px',
+    height: '70px',
   },
 };
 
 const LayoutComponent = (props: Props): ReactElement => {
   const { children } = props;
   return (
-    <div>
-      <HeaderComponent styles={styles} />
+    <>
+      <Header styles={styles} />
       <main css={layoutStyle.container}>{children}</main>
-    </div>
+    </>
   );
 };
 

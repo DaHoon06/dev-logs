@@ -111,8 +111,12 @@ const style = css`
     display: block;
   }
 
-  html,
-  body {
+  html {
+    width: 100%;
+    height: 100%;
+  }
+
+  #__next {
     width: 100%;
     height: 100%;
   }
@@ -125,6 +129,8 @@ const style = css`
   }
 
   body {
+    width: 100%;
+    height: calc(100% - 70px);
     line-height: 1;
   }
 

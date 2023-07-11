@@ -17,18 +17,23 @@ export interface QuizCategories {
 }
 
 const HomeStyle = {
-  container: css({}),
+  container: css({
+    width: '100%',
+    height: '100%',
+  }),
+  categoriesContainer: css({
+    padding: '1em 1.25em',
+  }),
   categories: css({
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: '1.25em 0',
     width: '100%',
     maxWidth: '1000px',
-    height: '400px',
-    margin: 'auto',
   }),
   categoriesItems: css({
+    width: '210px',
     marginRight: '1.25em',
   }),
 };
@@ -43,20 +48,25 @@ const Home: React.FC<Props> = (props): ReactElement => {
   const data = useQuiz(categories);
 
   return (
-    <div>
-      <div css={HomeStyle.categories}>
-        {data.map((item: QuizCategories) => {
-          return (
-            <div css={HomeStyle.categoriesItems} key={item._id}>
-              <CardUi thumbnail={{ src: item.thumbnail.url, alt: item.title }}>
-                <Typography variant={'body1'} weight={'bold'}>
-                  {item.title}
-                </Typography>
-              </CardUi>
-            </div>
-          );
-        })}
-      </div>
+    <div css={HomeStyle.container}>
+      <section css={HomeStyle.categoriesContainer}>
+        <Typography variant={'h1'} weight={'bold'}>
+          Quiz 카테고리를 선택해주세요.
+        </Typography>
+        <ul css={HomeStyle.categories}>
+          {data.map((item: QuizCategories) => {
+            return (
+              <li css={HomeStyle.categoriesItems} key={item._id}>
+                <CardUi thumbnail={{ src: item.thumbnail.url, alt: item.title }}>
+                  <Typography variant={'body1'} weight={'bold'}>
+                    {item.title}
+                  </Typography>
+                </CardUi>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 };
