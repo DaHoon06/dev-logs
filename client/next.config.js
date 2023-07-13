@@ -65,6 +65,7 @@ module.exports = {
     '^@apis/(.*)$': '<rootDir>/apis/$1',
     '^@constants/(.*)$': '<rootDir>/constants/$1',
     '^@libs/(.*)$': '<rootDir>/libs/$1',
+    '^@store/(.*)$': '<rootDir>/store/$1',
     '^@utils/(.*)$': '<rootDir>/utils/$1',
     '^@styles/(.*)$': '<rootDir>/styles/$1',
     '^@interfaces/(.*)$': '<rootDir>/interfaces/$1',

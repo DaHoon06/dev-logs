@@ -33,11 +33,12 @@
       "@apis/*": ["apis/*"],
       "@constants/*": ["constants/*"],
       "@libs/*": ["libs/*"],
+      "@store/*": ["store/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
       "@interfaces/*": ["interfaces/*"],
       "@images/*": ["../../public/images/*"],
-      "@assets/*": ["assets/*"],
+      "@assets/*": ["assets/*"]
     },
   },
   "include": ["next-env.d.ts", "src", "**/*.ts", "**/*.tsx", "types/**/*.ts"], // 컴파일 포함
