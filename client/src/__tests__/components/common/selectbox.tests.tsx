@@ -1,5 +1,5 @@
 import { SelectBox } from '@components/common/selectbox/SelectBox';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 const selectBoxInitialState = [
@@ -9,7 +9,7 @@ const selectBoxInitialState = [
 ];
 
 describe('UI Component - SelectBox Component', () => {
-  const user = userEvent;
+  const user = userEvent.setup({ delay: null });
   const id = 'select';
 
   test('Select Box 기본 값은 "선택" 이라는 빈 값', () => {
@@ -17,10 +17,10 @@ describe('UI Component - SelectBox Component', () => {
     // 초기 값의 경우 "선택"
     const selectBox = screen.getByRole('option', { name: '선택' }) as HTMLOptionElement;
     expect(selectBox.selected).toBe(true);
+    expect(selectBox.selected).toBeTruthy();
   });
 
-  test('Select Option "두 번째 답변입니다." 선택', () => {
-    const id = 'select';
+  test('Select Option "두 번째 답변입니다." 선택', async () => {
     const expectedValue = '두 번째 답변입니다';
     let returnText = '';
 
@@ -31,17 +31,16 @@ describe('UI Component - SelectBox Component', () => {
         onChange={(e) => (returnText = e.target.value)}
       />,
     );
-    // 2 번째 옵션 선택
-    act(() => {
+    // 2 번째 옵션 선택할 때까지 멈춤
+    await waitFor(() => {
       user.selectOptions(
         screen.getByRole('combobox'),
         screen.getByRole('option', { name: expectedValue }),
       );
-
-      // 결과 값 확인
-      const selectBox = screen.getByRole('option', { name: expectedValue }) as HTMLOptionElement;
-      expect(selectBox.selected).toBeTruthy();
-      expect(returnText).toBe(expectedValue);
     });
+    // 결과 값 확인
+    const selectBox = screen.getByRole('option', { name: expectedValue }) as HTMLOptionElement;
+    expect(selectBox.selected).toBeTruthy();
+    expect(returnText).toBe(expectedValue);
   });
 });

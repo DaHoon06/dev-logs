@@ -21,7 +21,6 @@ describe('UI Component - Input Component', () => {
     const input = screen.getByRole('checkbox');
 
     await act(async () => {
-      await user.clear(input);
       // Check input 을 클릭 했을 때 true 값 반환하는지 확인  clear()` is only supported on editable elements.
       await user.click(input);
       expect(isChecked).toBeTruthy();
@@ -45,12 +44,12 @@ describe('UI Component - Input Component', () => {
         onChange={(e) => (initialText = e.target.value)}
       />,
     );
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('textbox') as HTMLInputElement;
 
     await act(async () => {
       await user.clear(input);
       await user.type(input, expectedKeyword);
-      expect(input).toHaveValue(expectedKeyword);
+      expect(input.value).toEqual(expectedKeyword);
     });
   });
 });
