@@ -18,11 +18,13 @@ export const QuizCategories = (props: Props): ReactElement => {
       <Typography variant={'h1'} weight={'bold'}>
         Quiz 카테고리를 선택해주세요.
       </Typography>
-      <ul css={QuizStyle.categories}>
+      <div css={QuizStyle.categories}>
+        <ul css={QuizStyle.categoryContainer}>
         {items.map((item: Quiz.Categories) => {
           return (
-            <li css={QuizStyle.categoriesItems} key={item._id}>
+            <li key={item._id}>
               <Link
+                css={QuizStyle.card}
                 href={{
                   pathname: LOCATION.QUIZ,
                   query: { type: item._id },
@@ -37,7 +39,8 @@ export const QuizCategories = (props: Props): ReactElement => {
             </li>
           );
         })}
-      </ul>
+        </ul>
+      </div>
     </section>
   );
 };

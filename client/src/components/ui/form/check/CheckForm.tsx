@@ -1,31 +1,40 @@
-import React, { ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 import { Button } from '@components/common/button/Button';
 import { CheckIcon } from '@components/common/icons';
 import { Input } from '@components/common/input/Input';
 import { css } from '@emotion/react';
 
+type InputType = 'checkbox' | 'radio'
+
 interface Props {
   options: any;
-  duplicateKey: () => boolean;
-  setAnswerCheck: () => void;
+  type: InputType;
+  checked: boolean;
+  onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
+  onClickHandler: (payload: string) => void;
 }
 
 export const CheckForm = (props: Props): ReactElement => {
-  const { options, setAnswerCheck, duplicateKey } = props;
+  const { options, type = 'checkbox', onChangeHandler, checked, onClickHandler } = props;
+
+  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+    onChangeHandler && onChangeHandler(e);
+  }
 
   return (
     <div css={CheckFormStyle.container}>
-      <Button className={'mr-6'} variant={'icon'} onClick={setAnswerCheck}>
-        <CheckIcon checked={duplicateKey()} />
+      <Button className={'mr-6'} variant={'icon'} onClick={() => onClickHandler(options.answer)}>
+        <CheckIcon checked={checked} />
       </Button>
       <Input
+        value={options.answer}
         id={options.answer}
         name={options.answer}
         label={options.answer}
-        checked={duplicateKey()}
-        type={'checkbox'}
-        variant={'checkbox'}
-        onChange={setAnswerCheck}
+        checked={checked}
+        type={type}
+        variant={type}
+        onChange={onChangeInput}
       />
     </div>
   );

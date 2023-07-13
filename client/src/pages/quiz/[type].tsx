@@ -40,8 +40,6 @@ const QuizPage: React.FC<Props> = (props): ReactElement => {
 
   return (
     <div css={QuizQuestion.container}>
-      문제 가즈아
-      <p>갈끄니까~!</p>
       <ProgressBar currentTab={page} maxCount={totalCount} />
       {data.map((value: Quiz.Data, index: number) => {
         return (
@@ -50,16 +48,22 @@ const QuizPage: React.FC<Props> = (props): ReactElement => {
             css={[QuizQuestion.formContainer, page === index + 1 && QuizQuestion.show]}
           >
             <FormUi title={value.question} body={value.question} example={value.example} />
-            <Button variant={'gray'} onClick={() => nextPage(page - 1)}>
-              <Typography variant={'body1'} color={'gray'}>
-                이전
-              </Typography>
-            </Button>
-            <Button variant={'primary'} onClick={() => nextPage(page + 1)}>
-              <Typography variant={'body1'} color={'white'}>
-                다음
-              </Typography>
-            </Button>
+            <div css={QuizQuestion.buttonGroup}>
+              {page !== 1 && (
+                <Button variant={'gray'} onClick={() => nextPage(page - 1)}>
+                  <Typography variant={'body1'} color={'gray'}>
+                    이전
+                  </Typography>
+                </Button>
+              )}
+              
+              <Button variant={'primary'} onClick={() => nextPage(page + 1)}>
+                <Typography variant={'body1'} color={'white'}>
+                  다음
+                </Typography>
+              </Button>
+            </div>
+          
           </div>
         );
       })}
@@ -74,7 +78,7 @@ const QuizQuestion = {
     width: '100%',
     maxWidth: '1000px',
     margin: 'auto',
-    padding: '1em 0',
+    padding: '1.25em',
   }),
   formContainer: css({
     width: '100%',
@@ -85,4 +89,10 @@ const QuizQuestion = {
   show: css({
     display: 'inline-block',
   }),
+  buttonGroup: css ({
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    height: '100px',
+  })
 };

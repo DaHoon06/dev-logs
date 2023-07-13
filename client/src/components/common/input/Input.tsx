@@ -4,7 +4,7 @@ import { Typography } from '@components/common/typography/Typography'
 
 type InputValue = string | number | ReadonlyArray<string>
 type InputChangeEvent = ChangeEvent<HTMLInputElement>
-type InputVariant = 'default' | 'input_button' | 'checkbox'
+type InputVariant = 'default' | 'input_button' | 'checkbox' | 'radio'
 
 interface InputProps extends ComponentProps<'input'> {
   variant?: InputVariant
@@ -40,13 +40,14 @@ export const Input = (props: InputProps): ReactElement => {
         placeholder={placeholder}
         type={type}
         value={value}
+        name={id}
         onChange={onChangeHandler}
         {...rest}
       />
-      {label && type === 'checkbox' && (
+      {label && (type === 'checkbox' || type === 'radio') && (
         <Typography className={styles.checkbox_label}>{label}</Typography>
       )}
-      {label && type !== 'checkbox' && (
+      {label && type === 'text' && (
         <Typography className={'pb-8'} weight={'bold'}>
           {label}
         </Typography>

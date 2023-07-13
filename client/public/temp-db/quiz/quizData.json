@@ -2,24 +2,24 @@
   {
     "_id": "1",
     "type": "JavaScript",
-    "question":"문제 1",
+    "question":"다음 중 자바스크립트 자료형이 아닌 것은?",
     "point": 2,
     "example": [
       {
         "exampleId": "1",
-        "answer": "1"
+        "answer": "symbol"
       },
       {
         "exampleId": "2",
-        "answer": "2"
+        "answer": "long"
       },
       {
         "exampleId": "3",
-        "answer": "3"
+        "answer": "number"
       },
       {
         "exampleId": "4",
-        "answer": "4"
+        "answer": "Object"
       }
     ]
   },
