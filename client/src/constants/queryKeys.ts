@@ -4,5 +4,6 @@ export namespace QUERY_KEYS {
   };
   export const QUIZ = {
     CATEGORY: 'category',
+    DATA: 'data',
   };
 }
