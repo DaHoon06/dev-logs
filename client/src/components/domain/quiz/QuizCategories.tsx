@@ -2,48 +2,29 @@ import React, { ReactElement } from 'react';
 import { Typography } from '@components/common/typography/Typography';
 import { CardUi } from '@components/ui/card/CardUi';
 import { QuizStyle } from '@components/domain/quiz/Quiz.style';
-import { getQuizData } from '@apis/quiz';
 import Link from 'next/link';
-
-export interface QuizCategories {
-  _id: string;
-  title: string;
-  thumbnail: {
-    url: string;
-  };
-}
+import { Quiz } from '@interfaces/quiz';
+import { LOCATION } from '@constants/link';
 
 interface Props {
-  items: QuizCategories[] | { [key: string]: any };
+  items: Quiz.Categories[] | { [key: string]: any };
 }
 
 export const QuizCategories = (props: Props): ReactElement => {
   const { items } = props;
 
-  const onClickHandlerGetData = async (type: string) => {
-    try {
-      const data = await getQuizData(type);
-      console.log(data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
   return (
     <section css={QuizStyle.categoriesContainer}>
       <Typography variant={'h1'} weight={'bold'}>
         Quiz 카테고리를 선택해주세요.
       </Typography>
       <ul css={QuizStyle.categories}>
-        {items.map((item: QuizCategories) => {
+        {items.map((item: Quiz.Categories) => {
           return (
-            <li
-              css={QuizStyle.categoriesItems}
-              key={item._id}
-              onClick={() => onClickHandlerGetData(item._id)}
-            >
+            <li css={QuizStyle.categoriesItems} key={item._id}>
               <Link
                 href={{
-                  pathname: '/quiz/[type]',
+                  pathname: LOCATION.QUIZ,
                   query: { type: item._id },
                 }}
               >

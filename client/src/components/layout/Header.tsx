@@ -1,7 +1,8 @@
 import { CSSProperties, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { GithubSignInButton } from '@components/sign-in/github';
 import { Logo } from '@components/common/icons/Logo';
+import Link from 'next/link';
+import { LOCATION } from '@constants/link';
 
 interface Props {
   styles: { [key: string]: CSSProperties };
@@ -33,7 +34,9 @@ export const Header = (props: Props): ReactElement => {
   return (
     <header css={headerStyle.layout}>
       <div css={headerStyle.container}>
-        <Logo />
+        <Link href={LOCATION.HOME}>
+          <Logo />
+        </Link>
       </div>
     </header>
   );

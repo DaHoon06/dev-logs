@@ -4,36 +4,17 @@ import withGetServerSideProps from '@utils/withGetServerSideProps';
 import { getQuizData } from '@apis/quiz';
 import { getQuizDataQuery } from '../../hooks/queries/quiz/useQuiz';
 import { Quiz } from '@interfaces/quiz';
+import { FormUi } from '@components/ui/form/FormUi';
+import { ProgressBar } from '@components/ui/progress/ProgressBar';
+import { css } from '@emotion/react';
+import useUtilsStore from '../../store/utils.store';
+import { Button } from '@components/common/button/Button';
+import { Typography } from '@components/common/typography/Typography';
 
 interface Props {
   quizData: InferGetServerSidePropsType<GetServerSideProps>;
   type: string;
 }
-
-const QuizPage: React.FC<Props> = (props): ReactElement => {
-  const { quizData, type } = props;
-  const data = getQuizDataQuery(quizData, type);
-
-  return (
-    <div>
-      문제 가즈아
-      <p>갈끄니까~!</p>
-      {data.map((value: Quiz.Data, index: number) => {
-        return (
-          <div key={index}>
-            {value.question}
-
-            {value.example.map((item) => {
-              return <div key={item.exampleId}>{item.answer}</div>;
-            })}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export default QuizPage;
 
 export const getServerSideProps: GetServerSideProps = withGetServerSideProps(async (ctx) => {
   const { type } = ctx.query as { type: string };
@@ -45,3 +26,63 @@ export const getServerSideProps: GetServerSideProps = withGetServerSideProps(asy
     },
   };
 });
+
+const QuizPage: React.FC<Props> = (props): ReactElement => {
+  const { quizData, type } = props;
+  const { page, setPage } = useUtilsStore();
+  const data = getQuizDataQuery(quizData, type);
+  const totalCount = (() => data.length)();
+
+  const nextPage = (page: number) => {
+    if (page <= 0 || page === totalCount) return;
+    setPage(page);
+  };
+
+  return (
+    <div css={QuizQuestion.container}>
+      문제 가즈아
+      <p>갈끄니까~!</p>
+      <ProgressBar currentTab={page} maxCount={totalCount} />
+      {data.map((value: Quiz.Data, index: number) => {
+        return (
+          <div
+            key={index}
+            css={[QuizQuestion.formContainer, page === index + 1 && QuizQuestion.show]}
+          >
+            <FormUi title={value.question} body={value.question} example={value.example} />
+            <Button variant={'gray'} onClick={() => nextPage(page - 1)}>
+              <Typography variant={'body1'} color={'gray'}>
+                이전
+              </Typography>
+            </Button>
+            <Button variant={'primary'} onClick={() => nextPage(page + 1)}>
+              <Typography variant={'body1'} color={'white'}>
+                다음
+              </Typography>
+            </Button>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default QuizPage;
+
+const QuizQuestion = {
+  container: css({
+    width: '100%',
+    maxWidth: '1000px',
+    margin: 'auto',
+    padding: '1em 0',
+  }),
+  formContainer: css({
+    width: '100%',
+    maxWidth: '600px',
+    margin: 'auto',
+    display: 'none',
+  }),
+  show: css({
+    display: 'inline-block',
+  }),
+};

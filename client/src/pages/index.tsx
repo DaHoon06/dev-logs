@@ -1,5 +1,5 @@
 import withGetServerSideProps from '@utils/withGetServerSideProps';
-import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import React, { ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { getQuizCategories } from '@apis/quiz';
@@ -17,9 +17,17 @@ interface Props {
   categories: InferGetServerSidePropsType<GetServerSideProps>;
 }
 
+export const getServerSideProps: GetServerSideProps = withGetServerSideProps(async () => {
+  const data = await getQuizCategories();
+  return {
+    props: {
+      categories: data || [],
+    },
+  };
+});
+
 const Home: React.FC<Props> = (props): ReactElement => {
   const { categories } = props;
-
   const data = getQuizCategoriesQuery(categories);
 
   return (
@@ -30,12 +38,3 @@ const Home: React.FC<Props> = (props): ReactElement => {
 };
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = withGetServerSideProps(async () => {
-  const data = await getQuizCategories();
-  return {
-    props: {
-      categories: data || [],
-    },
-  };
-});
