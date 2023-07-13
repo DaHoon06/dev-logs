@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, waitFor, getByLabelText } from '@testing-library/react';
 import { Input } from '@components/common/input/Input';
 import userEvent from '@testing-library/user-event';
 
@@ -51,5 +51,50 @@ describe('UI Component - Input Component', () => {
       await user.type(input, expectedKeyword);
       expect(input.value).toEqual(expectedKeyword);
     });
+  });
+
+  test('Radio 클릭했을 때 value 값이 설정 되는지 확인', () => {
+    let initialText = '';
+    const expectedKeyword = '전다훈';
+    const inputType = 'radio';
+
+    render(
+      <Input 
+        type={inputType}
+        label={expectedKeyword}
+        value={expectedKeyword}
+        checked={initialText === expectedKeyword}
+        onChange={e => (initialText = e.target.value)}
+      />
+    );
+
+    const radio = screen.getByRole('radio') as HTMLInputElement;
+    const label: HTMLInputElement = screen.getByLabelText(expectedKeyword);
+
+    user.type(radio, expectedKeyword)
+    expect(radio.value).toEqual(initialText);
+  });
+
+  test('Radio 클릭했을 때 value 값이 설정 되는지 확인', async () => {
+    let initialText = '';
+    const expectedKeyword = '전다훈';
+    const inputType = 'radio';
+
+    render(
+      <Input 
+        type={inputType}
+        label={expectedKeyword}
+        value={expectedKeyword}
+        checked={initialText === expectedKeyword}
+        onChange={e => initialText = e.target.value}
+      />
+    );
+
+    const radio = screen.getByRole('radio') as HTMLInputElement;
+
+    await waitFor(() => {
+      user.type(radio, expectedKeyword)
+      expect(radio.value).toEqual(initialText);
+    })
   });
 });
